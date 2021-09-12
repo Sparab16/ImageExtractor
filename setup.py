@@ -8,7 +8,7 @@ setup(
   author = 'Shreyas Parab',
   author_email = 'shreyas.parab16@gmail.com',
   url = 'https://github.com/Sparab16/Extractor',
-  download_url = 'https://github.com/Sparab16/Extractor/archive/refs/tags/v1.0.tar.gz',
+  download_url = 'https://github.com/Sparab16/Extractor/archive/refs/tags/v1.1.tar.gz',
   keywords = ['Python', 'Selenium', 'Flask', 'Scheduling', 'Extract', 'Image Extract'],   # Keywords that define your package best
   install_requires=[
           'apscheduler',
