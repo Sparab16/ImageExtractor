@@ -1,31 +1,103 @@
-# <center>Extractor
+# Extractor
 
 Extractor library is useful to help the user download any kind of Images at any date and time over the internet. These images will get downloaded as a job and then let user know that the images have been downloaded.
 
-## <center>Appendix
+## Appendix
 
 There are often a times, we need bunch images to work. We can consider the example such as training the Machine learning model over the Cat and Dog images or having those hundreds of beautiful desktop/mobile wallpaper on our laptop with just single click. In such scenario’s we need hundreds of images right away. This problem can be solved using the Extractor Library. The following use cases can be implemented: 
   
-## <center>Features
+## Features
 
 - Upto 2000 images on single click
 - Cross platform
 
-## <center>Run Locally
+## Run Locally
 
 ### To download the Extractor, either fork this github repo or simply use Pypi via pip.
 
 ```bash
-pip install ImageExtractor
+$ pip install ImageExtractor
 ```
 
-### Using it
+### Code Demonstration
 
 ```python
-from ImageExtractor.Extractor import ImageExtractorClass
 
-image_extractor = ImageExtractorClass()
-image_extractor.schedule_job('sample_search_query', 'YY-MM-DD', 'HH:MM', 100)
+from flask import Flask
+from flask_cors import cross_origin
+from ImageExtractor.Extractor import ImageExtractorClass
+import datetime
+import threading
+import time
+import os
+
+app = Flask(__name__)
+
+
+class ThreadClass:
+
+    def __init__(self, req_id, time_to_sleep,):
+        self.req_id = str(req_id)
+        self.time_to_sleep = time_to_sleep
+        self.thread = threading.Thread(target = self.sleep)
+        self.thread.start()
+
+    def sleep(self):
+        try:
+            # Sleep for the given time
+            time.sleep(self.time_to_sleep)
+
+            # Wait until the zip file is not ready
+            while not os.path.exists(self.req_id + '_zipfile.zip'):
+                print('File not exists')
+                time.sleep(5)
+                
+            print('File exists now')
+            time.sleep(30)
+
+            # Deleting the file after 10 seconds
+            ImageExtractorClass.delete_file(self.req_id)
+            print('Files are deleted')
+        except Exception as e:
+            print(e)
+
+# Home page route
+@app.route('/', methods = ['GET'])
+@cross_origin()
+def index():
+    try:
+
+        # Creating the object of ImageExtractorClass
+        image_extractor = ImageExtractorClass()
+
+        # Current datetime
+        current = datetime.datetime.now()
+        
+        # The scheduled datetime
+        date_inserted = current + datetime.timedelta(minutes=5)
+
+        date_str = str(date_inserted.year) + '-' + str(date_inserted.month) + '-' + str(date_inserted.day)
+        time_str = str(date_inserted.hour) + ':' + str(date_inserted.minute)
+
+        req_id, time_to_sleep = image_extractor.schedule_job('some_sample_query', date_str, time_str, 54)
+
+        # Time to sleep the thread
+        time_to_sleep = current + datetime.timedelta(seconds=time_to_sleep)
+        total_seconds_sleep = time_to_sleep - datetime.datetime.now()
+        
+        # Total seconds to sleep the thread
+        total_seconds_sleep = int(total_seconds_sleep.total_seconds())
+
+        ThreadClass(req_id, total_seconds_sleep)
+        
+        return '<h1> req id is ' + str(req_id) +' and time_to_sleep is ' + str(total_seconds_sleep) + ' seconds</h1>'
+
+    except Exception as e:
+        return "<h1> Error is " + str(e) + "</h1>"
+
+if __name__ == '__main__':
+    app.debug = True
+    app.run()
 
 ```
 And you are ready to go! At this point, at the given date and time, the images will start downloading.
@@ -81,6 +153,7 @@ Please include the sample queries and their corresponding results.
 ## Authors
 
 - [@Shreyas](https://github.com/Sparab16)
+- [@Harshad](https://github.com/harshad5498)
   
 ## Optimizations
 
