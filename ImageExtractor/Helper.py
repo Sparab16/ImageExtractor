@@ -1,6 +1,6 @@
-from Extractor.Download import Download
-from Extractor.Logger import Logging
-from Extractor.Scrapper import ImageScrapperClass
+from ImageExtractor.Download import Download
+from ImageExtractor.Logger import Logging
+from ImageExtractor.Scrapper import ImageScrapperClass
 
 logger_obj = Logging('Advance Image Downloader')  # Creating a custom based logger
 logger_obj.initialize_logger()  # Instantiating the logger object

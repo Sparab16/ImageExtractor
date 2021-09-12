@@ -3,9 +3,9 @@ from dateutil import tz
 
 from apscheduler.schedulers.background import BackgroundScheduler
 
-from Extractor.config import scheduler_config
-from Extractor.Helper import HelperClass
-from Extractor.Logger import Logging
+from ImageExtractor.config import scheduler_config
+from ImageExtractor.Helper import HelperClass
+from ImageExtractor.Logger import Logging
 
 # Configuring the logger
 logger_obj = Logging('Advance Image Downloader')  # Creating a custom based logger

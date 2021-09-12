@@ -1,5 +1,5 @@
 import logging
-from Extractor.config import log_config
+from ImageExtractor.config import log_config
 
 
 class Logging:

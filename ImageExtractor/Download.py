@@ -1,7 +1,7 @@
 import os
 import requests
 import shutil
-from Extractor.Logger import Logging
+from ImageExtractor.Logger import Logging
 
 logger_obj = Logging('Advance Image Downloader')  # Creating a custom based logger
 logger_obj.initialize_logger()  # Instantiating the logger object

@@ -1,11 +1,11 @@
 from distutils.core import setup
 setup(
-  name = 'Extractor',
-  packages = ['Extractor'],
-  version = '1.0',
+  name = 'ImageExtractor',
+  packages = ['ImageExtractor'],
+  version = '1.1',
   license='MIT',
-  description = 'Extractor library is useful to help the user download any kind of Images at any date and time over the internet. These images will get downloaded as a job and then let user know that the images have been downloaded.',
-  author = 'Shreyas Parab',
+  description = 'ImageExtractor library is useful to help the user download any kind of Images at any date and time over the internet. These images will get downloaded as a job and then let user know that the images have been downloaded.',
+  author = 'Sparab16',
   author_email = 'shreyas.parab16@gmail.com',
   url = 'https://github.com/Sparab16/Extractor',
   download_url = 'https://github.com/Sparab16/Extractor/archive/refs/tags/v1.1.tar.gz',

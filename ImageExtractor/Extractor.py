@@ -1,8 +1,8 @@
 import uuid
 
-from Extractor.Scheduler import ScheduleJob
-from Extractor.Logger import Logging
-from Extractor.Download import Download
+from ImageExtractor.Scheduler import ScheduleJob
+from ImageExtractor.Logger import Logging
+from ImageExtractor.Download import Download
 
 # Configuring the logger
 logger_obj = Logging('Advance Image Downloader')  # Creating a custom based logger
@@ -24,7 +24,7 @@ class ImageExtractorClass:
                 logger_obj.print_log('Schedule is added for adding the job in queue', 'info')
                 return req_id, no_images
             else:
-                logger_obj.print_log('(ImageExtractor.py) - Something went wrong ' + error, 'exception')
+                logger_obj.print_log('(Extractor.py) - Something went wrong ' + error, 'exception')
                 raise Exception(error)
         except Exception as e:
             print(e)
@@ -56,13 +56,13 @@ def validate_inputs(search_query, date, time, no_images):
                 return True, None
             else:
                 logger_obj.print_log(
-                    '(ImageExtractor.py (validate_inputs)) - Something went wrong. No of images must be in '
+                    '(Extractor.py (validate_inputs)) - Something went wrong. No of images must be in '
                     'between 1 and 2000',
                     'exception')
                 return False, 'No of images must be in between 1 and 500'
         else:
             logger_obj.print_log(
-                '(ImageExtractor.py (validate_inputs)) - Something went wrong. One of the inputs is empty',
+                '(Extractor.py (validate_inputs)) - Something went wrong. One of the inputs is empty',
                 'exception')
             return False, 'One of inputs is empty'
 

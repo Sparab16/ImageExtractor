@@ -1,7 +1,7 @@
 
 from flask import Flask
 from flask_cors import cross_origin
-from Extractor.ImageExtractor import ImageExtractorClass
+from ImageExtractor.Extractor import ImageExtractorClass
 import datetime
 import threading
 import time

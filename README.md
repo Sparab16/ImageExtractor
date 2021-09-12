@@ -16,15 +16,16 @@ There are often a times, we need bunch images to work. We can consider the examp
 ### To download the Extractor, either fork this github repo or simply use Pypi via pip.
 
 ```bash
-pip install Extractor
+pip install ImageExtractor
 ```
 
 ### Using it
+
 ```python
-from Extractor.ImageExtractor import ImageExtractorClass
+from ImageExtractor.Extractor import ImageExtractorClass
 
 image_extractor = ImageExtractorClass()
-image_extractor.schedule_job('sample_search_query', 'YY-MM-DD','HH:MM',100)
+image_extractor.schedule_job('sample_search_query', 'YY-MM-DD', 'HH:MM', 100)
 
 ```
 And you are ready to go! At this point, at the given date and time, the images will start downloading.

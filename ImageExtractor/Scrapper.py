@@ -4,7 +4,7 @@ from urllib import parse
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 
-from Extractor.Logger import Logging
+from ImageExtractor.Logger import Logging
 
 # For selenium driver implementation on heroku
 chrome_options = webdriver.ChromeOptions()
