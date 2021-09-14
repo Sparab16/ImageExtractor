@@ -1,10 +1,10 @@
-# Extractor
+# Image Extractor
 
-Extractor library is useful to help the user download any kind of Images at any date and time over the internet. These images will get downloaded as a job and then let user know that the images have been downloaded.
+Image Extractor library is useful to help the user download any kind of Images at any date and time over the internet. These images will get downloaded as a job and then let user know that the images have been downloaded.
 
 ## Appendix
 
-There are often a times, we need bunch images to work. We can consider the example such as training the Machine learning model over the Cat and Dog images or having those hundreds of beautiful desktop/mobile wallpaper on our laptop with just single click. In such scenario’s we need hundreds of images right away. This problem can be solved using the Extractor Library. The following use cases can be implemented: 
+There are often a times, we need bunch images to work. We can consider the example such as training the Machine learning model over the Cat and Dog images or having those hundreds of beautiful desktop/mobile wallpaper on our laptop with just single click. In such scenario’s we need hundreds of images right away. This problem can be solved using the Image Extractor Library. The following use cases can be implemented: 
   
 ## Features
 
@@ -13,7 +13,7 @@ There are often a times, we need bunch images to work. We can consider the examp
 
 ## Run Locally
 
-### To download the Extractor, either fork this github repo or simply use Pypi via pip.
+### To download the Image Extractor, either fork this<a href= 'https://github.com/Sparab16/ImageExtractor'></a> github repo or simply use Pypi via pip.
 
 ```bash
 $ pip install ImageExtractor
@@ -102,7 +102,7 @@ if __name__ == '__main__':
 ```
 And you are ready to go! At this point, at the given date and time, the images will start downloading.
   
-## <center>Usage
+## Usage
 
 ### Development
 
@@ -136,7 +136,7 @@ If you find any bug or have some idea about a new feature that can be implemente
 
 Please include the sample queries and their corresponding results.
 
-## <center>Tech Stack
+## Tech Stack
 
 ### Project is built with:-
 

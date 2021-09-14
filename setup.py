@@ -6,6 +6,7 @@ with open('README.md', 'r', encoding='utf-8') as file:
 setuptools.setup(
     name="ImageExtractor",
     author="Shreyas Parab",
+    version = '1.2.1',
     author_email="shreyas.parab16@gmail.com",
     description="ImageExtractor library is useful to help the user download any kind of Images at any date and time over the internet. These images will get downloaded as a job and then let user know that the images have been downloaded.",
     long_description=long_description,
